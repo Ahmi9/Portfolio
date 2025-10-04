@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmed</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="logo">
+            <h1>Ahmed</h1>
+        </div>
+        <div class="links">
+            <a href="#work">Work</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+    <!-- Mobile Side Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="container">
+        <div class="text">
+            <h2 class="white">I’m Ahmed — a senior product <br> designer</h2>
+            <h2>that cares a lot about<br> positive impact projects</h2>
+        </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section class="featured">
+        <h4 class="white">Featured Projects</h4>
+        <h4>· 2020--2025</h4>
+        <div class="cards">
+            <div class="card">
+                <img src="https://cdn.prod.website-files.com/6523e9cffb80758715c66b26/6523e9cffb80758715c66b64_project-6-thumbnail-p-800.jpeg"
+                    alt="Project 1">
+                <h3 class="white">Rule ratio</h3>
+                <p>Product design</p>
+            </div>
+            <div class="card">
+                <img src="https://cdn.prod.website-files.com/6523e9cffb80758715c66b26/6523e9cffb80758715c66b66_project-5-thumbnail-p-800.jpeg"
+                    alt="Project 2">
+                <h3 class="white">Situation</h3>
+                <p>Visual identity</p>
+            </div>
+            <div class="card">
+                <img src="https://cdn.prod.website-files.com/6523e9cffb80758715c66b26/6523e9cffb80758715c66b6d_project-4-thumbnail-p-800.jpeg"
+                    alt="Project 3">
+                <h3 class="white">Vertical</h3>
+                <p>Product Design</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="left">
+            <h2 class="white">About Me</h2>
+        </div>
+        <div class="right">
+            <p class="white">
+                I'm Ahmed, a senior product designer with over 10 years of experience in creating impactful digital
+                experiences. My passion lies in designing solutions that not only meet user needs but also contribute
+                positively to society. I specialize in user-centered design, visual identity, and product strategy.
+                Let's work together to make a difference through design.
+            </p>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience" id="work">
+        <div class="left">
+            <h2 class="white">Experience</h2>
+        </div>
+        <div class="right grid">
+            <div class="box">
+                <h3 class="white">Senior Product Designer</h3>
+                <p class="white">Google · 2020 - Present</p>
+            </div>
+            <div class="box">
+                <h3 class="white">Lead UX Designer</h3>
+                <p class="white">Facebook · 2016 - 2020</p>
+            </div>
+            <div class="box">
+                <h3 class="white">Product Designer</h3>
+                <p class="white">Amazon · 2012 - 2016</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2 class="white">Want to create something awesome? Drop me an email.</h2>
+        <a href="mailto:ahmedmahmood9431@gmail.com" class="btn">Hi@gmail.com</a>
+    </section>
+
+    <!-- Social Links -->
+    <div class="social">
+        <a href="#"><i class="fa-brands fa-linkedin-in fa-lg"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram fa-lg"></i></a>
+    </div>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        hamburger.onclick = function () {
+            mobileMenu.classList.toggle('active');
+            hamburger.classList.toggle('open');
+        };
+        window.onclick = function (e) {
+            if (!mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
+                mobileMenu.classList.remove('active');
+                hamburger.classList.remove('open');
+            }
+        };
+
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href').replace('#', '');
+                const target = document.getElementById(targetId);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                    mobileMenu.classList.remove('active');
+                    hamburger.classList.remove('open');
+                }
+            });
+        });
+    </script>
+
+    <script src="https://kit.fontawesome.com/508d092906.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
